@@ -43,22 +43,22 @@ public class candidateService implements ICandidateService {
             ValidateObject responseValidate = ValidateCandidate.ValidateCandidate(candidate);
             if(responseValidate.parameter.isEmpty()){
                 _clientRepository.saveClient(responseValidate.client);
-                response.message = "client created";
-                response.statusCode = 201;
+                response.setMessage("Client created");
+                response.setStatusCode(201);
 
                 _logger.logInformation("client created");
 
                  return ResponseEntity.status(HttpStatus.CREATED).body(response);
             }
             else{
-                response.message = responseValidate.parameter;
-                response.statusCode = 400;
+                response.setMessage(responseValidate.parameter);
+                response.setStatusCode(400);
                 _logger.logError(responseValidate.parameter);
                 return ResponseEntity.badRequest().body(response);
             }          
         }catch(Exception e){
-            response.message = e.getMessage();
-            response.statusCode = 500;
+            response.setMessage(e.getMessage());
+            response.setStatusCode(500);
             _logger.logError(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
@@ -88,9 +88,15 @@ public class candidateService implements ICandidateService {
 
     public ResponseEntity<ResponseApiList<CandidateCalculated>> GetAllClients(){
         ResponseApiList<CandidateCalculated> response = new ResponseApiList();
-
         try{
             List<Client> clientsList = _clientRepository.getAllClients();
+            if(clientsList.size() == 0){
+                response.data = null;
+                response.message = "No clients found";
+                response.statusCode = 404;
+                _logger.logError("No clients found");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+            }
 
             List<CandidateCalculated> calculatedClients = clientsList.stream()
             .map(client -> new CandidateCalculated(
