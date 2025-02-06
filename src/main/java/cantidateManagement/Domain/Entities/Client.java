@@ -1,5 +1,4 @@
-package cantidateManagement.Entities;
-
+package cantidateManagement.Domain.Entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package cantidateManagement.Models;
+package cantidateManagement.Domain.Models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

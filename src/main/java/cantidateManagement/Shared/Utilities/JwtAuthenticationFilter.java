@@ -1,4 +1,4 @@
-package cantidateManagement.Utilities;
+package cantidateManagement.Shared.Utilities;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

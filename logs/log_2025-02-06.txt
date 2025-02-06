@@ -1,0 +1,19 @@
+2025-02-06 06:36:12 [INFO] client created
+2025-02-06 06:36:39 [ERROR] error
+2025-02-06 06:46:25 [INFO] begin endpoint /getallclients
+2025-02-06 06:46:26 [INFO] end endpoint /getallclients
+2025-02-06 06:50:07 [INFO] begin endpoint /getallclients
+2025-02-06 06:50:08 [INFO] end endpoint /getallclients
+2025-02-06 06:50:08 [INFO] /**/
+2025-02-06 06:50:09 [INFO] begin endpoint /getallclients
+2025-02-06 06:50:11 [INFO] end endpoint /getallclients
+2025-02-06 06:50:11 [INFO] /**/
+2025-02-06 07:18:48 [INFO] begin endpoint /saveclient
+2025-02-06 07:18:48 [INFO] {"name":"raul","lastName":"del prado","age":76,"birthdate":"2015-02-20"}
+2025-02-06 07:18:49 [INFO] client created
+2025-02-06 07:18:49 [INFO] end endpoint /saveclient
+2025-02-06 07:18:49 [INFO] /**/
+2025-02-06 07:19:53 [INFO] begin endpoint /getallclients
+2025-02-06 07:19:55 [INFO] client list received correctly
+2025-02-06 07:19:55 [INFO] end endpoint /getallclients
+2025-02-06 07:19:55 [INFO] /**/

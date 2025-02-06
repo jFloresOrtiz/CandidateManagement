@@ -1,7 +1,6 @@
-package cantidateManagement.Dto;
+package cantidateManagement.Domain.Dto;
 
 import java.util.List;
-
 import lombok.Data;
 
 @Data

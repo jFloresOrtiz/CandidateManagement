@@ -1,37 +1,32 @@
-package cantidateManagement.Repository;
+package cantidateManagement.Infraestructure.Repository;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
+import cantidateManagement.Domain.Entities.Client;
+import cantidateManagement.Domain.Models.Metrics;
+import cantidateManagement.Infraestructure.Interfaces.ICandidatesManagementRepository;
+import cantidateManagement.Infraestructure.Interfaces.IClientRepository;
 
-import cantidateManagement.Entities.Client;
-import cantidateManagement.Models.Candidate;
-import cantidateManagement.Models.Metrics;
-
-@Service
-public class ClientRepositoryService {
+@Repository
+public class ClientRepository implements IClientRepository{
     
      @Autowired
-    private CandidatesManagementRepository repository;
+    private ICandidatesManagementRepository repository;
 
-    // Método para guardar un nuevo cliente
     public Client saveClient(Client client) {
         return repository.save(client);
     }
 
-    // Método para obtener todos los clientes
     public List<Client> getAllClients() {
         return repository.findAll();
     }
 
-    // Método para obtener un cliente por su id
     public Optional<Client> getClientById(Long id) {
         return repository.findById(id);
     }
 
-    // Método para eliminar un cliente
     public void deleteClient(Long id) {
         repository.deleteById(id);
     }
